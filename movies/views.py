@@ -113,7 +113,7 @@ class CriticReviewView(generics.CreateAPIView, generics.UpdateAPIView):
             critic = Criticism.objects.get(movie=movie, critic=request.user)
 
         except ObjectDoesNotExist:
-            return Responde({'detail':'Not found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'detail':'Not found'}, status=status.HTTP_404_NOT_FOUND)
 
         critic.stars = request.data['stars']
         critic.review = request.data['review']
@@ -145,7 +145,7 @@ class CommentReviewView(generics.CreateAPIView, generics.UpdateAPIView):
         try:
             movie = Movie.objects.get(id=kwargs['movie_id'])
         except ObjectDoesNotExist:
-            return Responde({'detail':'Not found.'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'detail':'Not found.'}, status=status.HTTP_404_NOT_FOUND)
 
         # para criar um comentário, é necessário o comentário, o filme e o usuário
         comment = Comment.objects.create(comment=request.data['comment'], user=request.user, movie=movie)
