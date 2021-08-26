@@ -10,7 +10,13 @@ Ao iniciar o projeto, no terminal, na raiz, rodar o comando no terminal:
 
 Para criar as tabelas.
 
-Instalação será implementada.
+## Execução
+
+Ainda no terminal:
+
+./manage.py runserver
+
+Pronto! É possível testar o aplicativo localmente por aplicativos de requisição como Insomnia e Postman.
 
 
 ## Sobre:
